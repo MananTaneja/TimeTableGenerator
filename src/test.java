@@ -4,7 +4,7 @@ public class test {
 	public static void main(String[] args) throws IOException {
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 		System.out.println("Welcome to Faculty Timetable generation system!");
-		FacInfo ob = new FacInfo();
+		/*FacInfo ob = new FacInfo(); // Creating object for only 1 faculty can be updated to array later
 		System.out.println("Enter the number of course the faculty is handling");
 		int n = Integer.parseInt(br.readLine()); // Will set a variable later for now use 3
 		CourseDetails course[] = new CourseDetails[3];
@@ -13,7 +13,9 @@ public class test {
 		course[2] = new CourseDetails("Maths Lab", "15MAT999", 2, "ECE-C" , true);
 		course[0].showCourseDetails();
 		course[1].showCourseDetails();
-		course[2].showCourseDetails();
+		course[2].showCourseDetails();*/
+		TimeTableDetails t = new TimeTableDetails();
+		t.printTableFormat();
 	}
 
 }
