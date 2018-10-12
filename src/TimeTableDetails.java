@@ -1,7 +1,14 @@
+import java.util.Random;
 
 public class TimeTableDetails {
-	int no_hours = 7;
-	String days[] = {"Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"};
+	String days[] = {"Monday", "Tuesday", "Wednesday", "Thursday", "Friday"};
+	int tt[] = new int[30];
+	
+	public TimeTableDetails() {
+		for(int i = 0; i<30;i++) {
+			tt[i] = 0;
+		}
+	}
 	public void printGap(int a, int b) {
 		for(int i = b ; i <= a ; i++ ) {
 			System.out.print(" ");
@@ -21,14 +28,36 @@ public class TimeTableDetails {
 			System.out.print("_");
 		}
 		System.out.println("\n");
-		for (int i = 0 ; i < 6; i++) {
+		for (int i = 0 ; i < 5; i++) {
 			System.out.print(days[i]);
 			printGap(12, days[i].length());
-			for(int j = 0 ; j < 7; j++) {
+			for(int j = 0 ; j < 6; j++) {
 				System.out.print("XYZ Subject");
 				printGap(30, 12);
 			}
 			System.out.println("\n");
+		}
+	}
+	
+	
+	public void generate(CourseDetails ob) {
+		 int count = 0;
+		 Random rand = new Random();
+		 while(count<ob.occurence) {
+			 int rand_int = rand.nextInt(30);
+			 tt[rand_int] = ob.course_id;
+			 count++;
+			 }
+		 }
+	
+	public void display_timetable_array() {
+		int count = 1;
+		for(int i= 0  ; i<30; i++) {
+			System.out.print(tt[i] + "\t");
+			if(count % 6==0) {
+				System.out.println();
+			}
+			count++;
 		}
 	}
 }
